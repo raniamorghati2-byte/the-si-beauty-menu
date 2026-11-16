@@ -1,0 +1,18 @@
+THE SI BEAUTY LOUNGE - MISE EN LIGNE RENDER
+
+1. Créer un compte sur github.com et un dépôt privé appelé the-si-beauty-menu.
+2. Dans ce dépôt, sélectionner Add file > Upload files.
+3. Faire glisser le contenu du dossier the_si_render (Dockerfile, server.py, public, etc.) vers la zone de dépôt. Ne pas glisser seulement le ZIP. Vérifier que Dockerfile se trouve à la racine du dépôt.
+4. Cliquer Commit changes.
+5. Sur dashboard.render.com, sélectionner New > Web Service > GitHub, puis le dépôt créé.
+6. Runtime: Docker, branche main; choisir un plan prenant en charge un disque persistant.
+7. Dans Advanced, ajouter le disque monté sur /data (1 Go suffit pour commencer si proposé).
+8. Configurer les variables d'environnement :
+   ADMIN_EMAIL = votre adresse e-mail
+   ADMIN_PASSWORD = un mot de passe secret fort de 12 caractères minimum (ne le partagez pas)
+   DATA_DIR = /data
+   SECURE_COOKIES = 1
+9. Déployer. Attendre l'indication Live puis ouvrir le lien HTTPS attribué, et /admin pour se connecter.
+10. Les changements du catalogue se font dans l'administration; ne modifier le code qu'en cas de refonte.
+
+ATTENTION : Render peut demander un moyen de paiement pour le disque persistant. Vérifier le prix avant de valider. Une version gratuite sans disque peut perdre toutes les modifications.
